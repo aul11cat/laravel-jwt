@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'created_at', 'updated_at'
     ];
 
     /**
@@ -41,7 +41,7 @@ class User extends Authenticatable
      * @var string $value
      * 加密密碼
      */
-    public function setPasswordEncrypt($value)
+    public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
     }

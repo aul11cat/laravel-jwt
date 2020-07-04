@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name')->comment('姓名');
             $table->string('email')->unique()->comment('電子信箱');
             $table->string('password');
-            $table->integer('status')->comment('使用者狀態');
+            $table->integer('status')->comment('使用者狀態')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
